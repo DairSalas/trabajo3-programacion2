@@ -1,9 +1,11 @@
 package taller;
 
+import java.util.Arrays;
+
 public class DeclararVector {
 
     private Vehiculo datos[];
-    private int tam;    
+    private int tam;
 
     public DeclararVector() {
         datos = null;
@@ -36,7 +38,7 @@ public class DeclararVector {
 
     public int buscarFacturaLineal(float val) {
         for (int i = 0; i < getTam(); i++) {
-            if (getDatos(i).getValor()== val) {
+            if (getDatos(i).getValor() == val) {
                 return i;
             }
         }
@@ -79,16 +81,6 @@ public class DeclararVector {
             }
         }
     }
-    
-    public void ordenarBurbujaValor() {
-        for (int i = 0; i < getTam(); i++) {
-            for (int j = 0; j <= (getTam() - i) - 2; j++) {
-                if (getDatos(j).precioTotal() > getDatos(j + 1).precioTotal()) {
-                    cambiar(j, j + 1);
-                }
-            }
-        }
-    }
 
     private int ordenarHoras(int inicio) {
         int posMayor;
@@ -112,9 +104,8 @@ public class DeclararVector {
         }
     }
 
-    
     public void quickSort(int izq, int der) {
-         Vehiculo pivote = getDatos(izq);
+        Vehiculo pivote = getDatos(izq);
         int i = izq;
         int j = der;
 
@@ -137,6 +128,20 @@ public class DeclararVector {
         }
         if (j + 1 < der) {
             quickSort(j + 1, der);
+        }
+    }
+
+    public void ordenarBurbujaAlfabetico() {
+        Arrays.sort(datos, new ComparadorNombre());
+    }
+
+    public void ordenarBurbujaValor() {
+        for (int i = 0; i < getTam(); i++) {
+            for (int j = 0; j <= (getTam() - i) - 2; j++) {
+                if (getDatos(j).precioTotal() > getDatos(j + 1).precioTotal()) {
+                    cambiar(j, j + 1);
+                }
+            }
         }
     }
 

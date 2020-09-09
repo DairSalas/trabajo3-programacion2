@@ -1,5 +1,6 @@
 package trabajo3;
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class Trabajo3 {
@@ -30,14 +31,15 @@ public class Trabajo3 {
             opc = Integer.parseInt(JOptionPane.showInputDialog("Escoja una opcion:\n"
                     + "\n1. Inicializar vector facturas"
                     + "\n2. mostrar facturas"
-                    + "\n3. buscar factura por valor usando el método lineal"
-                    + "\n4. buscar factura por valor usando el método binario"
-                    + "\n5. Ordenar por el método quicksort"
-                    + "\n6. Ordenar por el método burbuja"
-                    + "\n7. Ordenar por el método intercambio"
-                    + "\n8. SALIR"
-                    + "\nSeleccione una opción del 1 al 8"));
-        } while (opc <= 0 || opc > 8);
+                    + "\n3. Ordenar alfabeticamente"
+                    + "\n4. buscar factura por valor usando el método lineal"
+                    + "\n5. buscar factura por valor usando el método binario"
+                    + "\n6. Ordenar por el método quicksort"
+                    + "\n7. Ordenar por el método burbuja"
+                    + "\n8. Ordenar por el método intercambio"
+                    + "\n9. SALIR"
+                    + "\nSeleccione una opción del 1 al 9"));
+        } while (opc <= 0 || opc > 9);
         return opc;
     }
 
@@ -177,6 +179,17 @@ public class Trabajo3 {
                     if (declararVector.getNumElementos() == 0) {
                         JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
                     } else {
+                        Arrays.sort(declararVector.getVectorVehiculos(), new ComparadorAlfabetico());
+                        mostrarTodo(declararVector);
+                    }
+
+                    break;
+
+                case 4:
+
+                    if (declararVector.getNumElementos() == 0) {
+                        JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
+                    } else {
                         val = Integer.parseInt(JOptionPane.showInputDialog("ingrese valor a buscar"));
 
                         searched = declararVector.valorLineal(val);
@@ -190,7 +203,7 @@ public class Trabajo3 {
 
                     break;
 
-                case 4:
+                case 5:
 
                     if (declararVector.getNumElementos() == 0) {
                         JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
@@ -210,7 +223,7 @@ public class Trabajo3 {
 
                     break;
 
-                case 5:
+                case 6:
 
                     if (declararVector.getNumElementos() == 0) {
                         JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
@@ -222,7 +235,7 @@ public class Trabajo3 {
 
                     break;
 
-                case 6:
+                case 7:
 
                     if (declararVector.getNumElementos() == 0) {
                         JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
@@ -234,7 +247,7 @@ public class Trabajo3 {
 
                     break;
 
-                case 7:
+                case 8:
 
                     if (declararVector.getNumElementos() == 0) {
                         JOptionPane.showMessageDialog(null, "Debe llenar el vector, EJECUTAR la opción 1");
@@ -246,7 +259,7 @@ public class Trabajo3 {
 
                     break;
             }
-        } while (opc != 8);
+        } while (opc != 9);
 
     }
 

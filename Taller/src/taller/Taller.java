@@ -74,8 +74,9 @@ public class Taller {
                     + "\n4. MÉTODO BURBUJA"
                     + "\n5. MÉTODO INTERCAMBIO"
                     + "\n6. MÉTODO QUICKSORT"
-                    + "\n7. SALIR"
-                    + "\nSeleccione una opción del 1 al 7"));
+                    + "\n7. ORDENAR POR CLIENE"
+                    + "\n8. SALIR"
+                    + "\nSeleccione una opción del 1 al 8"));
 
             switch (opc) {
 
@@ -144,10 +145,14 @@ public class Taller {
                     JOptionPane.showMessageDialog(null, "El vector se ordeno");
                     break;
                 case 7:
+                    vec.ordenarBurbujaAlfabetico();
+                    JOptionPane.showMessageDialog(null, "El vector se ordeno por cliente");
+                    break;
+                case 8:
                     System.exit(0);
                     break;
             }
-        } while (opc != 7);
+        } while (opc != 8);
 
     }
 
