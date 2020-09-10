@@ -93,7 +93,7 @@ public class DeclararVector {
     }
 
     public int busquedaBinaria(float val) {
-
+        quickSortValor(0, tamanio-1);
         int pos, izq, der, centro;
         izq = 0;
         der = getTamanio() - 1;
@@ -211,10 +211,10 @@ public class DeclararVector {
         setVehiculos(izq, getVehiculo(j));
         setVehiculos(j, pivote);
         if (izq < j - 1) {
-            quickSort(izq, j - 1);
+            quickSortValor(izq, j - 1);
         }
         if (j + 1 < der) {
-            quickSort(j + 1, der);
+            quickSortValor(j + 1, der);
         }
     }
 
